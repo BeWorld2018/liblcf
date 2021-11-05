@@ -33,6 +33,10 @@
 #   include <locale>
 #endif
 
+#if defined(__MORPHOS__) || defined(__amigaos4__)
+#define ICONV_CONST const
+#endif
+
 namespace lcf {
 
 static std::string filterUtf8Compatible(std::string enc) {
